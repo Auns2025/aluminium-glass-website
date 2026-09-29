@@ -44,7 +44,7 @@ const services = [
   },
   {
     number: "05",
-    image: "/service-web-editorial.webp",
+    image: "/images/Gemini_Generated_Image_2mgwqs2mgwqs2mgw.jpeg",
     title: "Steel & Metal Fabrication",
     label: "Structural Metal",
     description: "Precision CNC laser-cut stainless steel frames, railings, pergolas, and architectural metal support systems.",
@@ -52,7 +52,7 @@ const services = [
   },
   {
     number: "06",
-    image: "/service-systems-editorial-v2.webp",
+    image: "/images/making-windows-bird-friendly-with-saflex-r-flysafe-3d_2.jpg",
     title: "Safety & Acoustic Glazing",
     label: "Engineered Glass",
     description: "Laminated soundproof and bullet-resistant multi-layered glass solutions for private residences and banks.",

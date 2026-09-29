@@ -16,6 +16,7 @@ const Home = () => {
   return (
     <div className="w-full overflow-hidden">
       <Hero />
+      
       <AboutSection />
       <ServicesSection />
       <AccentBanner />
@@ -32,4 +33,4 @@ const Home = () => {
 };
 
 export default Home;
-
+

@@ -1,0 +1,1308 @@
+/* =========================================================
+   GLASS INTRO
+   Hammer → Glass Impact → Crack → Shatter → Website Reveal
+   ========================================================= */
+
+.glass-intro {
+  --gold: #e5a53e;
+  --black: #000000;
+  --pink: #f93353;
+  --green: #84c389;
+  --white: #f7f7f8;
+
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  width: 100%;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(229, 165, 62, 0.08),
+      transparent 35%
+    ),
+    #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+
+  animation: introFadeIn 0.6s ease forwards;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.glass-intro__background {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(229, 165, 62, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(132, 195, 137, 0.05),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(249, 51, 83, 0.04),
+      transparent 25%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP BRAND
+   ========================================================= */
+
+.glass-intro__brand {
+  position: absolute;
+
+  top: 8%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  text-align: center;
+
+  pointer-events: none;
+
+  animation: brandReveal 1s ease 0.3s both;
+}
+
+.glass-intro__brand-title {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 15px rgba(229, 165, 62, 0.2),
+    0 0 40px rgba(229, 165, 62, 0.08);
+}
+
+.glass-intro__brand-title span {
+  color: var(--gold);
+
+  text-shadow:
+    0 0 10px rgba(229, 165, 62, 0.45),
+    0 0 25px rgba(229, 165, 62, 0.2);
+}
+
+.glass-intro__brand-line {
+  width: 55px;
+  height: 1px;
+
+  margin: 12px auto 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+
+  box-shadow: 0 0 10px rgba(229, 165, 62, 0.5);
+}
+
+
+/* =========================================================
+   CENTER AREA
+   ========================================================= */
+
+.glass-intro__scene {
+  position: relative;
+
+  width: min(72vw, 900px);
+  height: min(65vh, 650px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1400px;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   GLASS
+   ========================================================= */
+
+.glass-intro__glass {
+  position: absolute;
+
+  width: min(38vw, 430px);
+  height: min(52vh, 500px);
+
+  min-width: 250px;
+  min-height: 320px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotateX(1deg)
+    rotateY(-2deg);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.035) 40%,
+      rgba(255, 255, 255, 0.08)
+    );
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  box-shadow:
+    inset 0 0 40px rgba(255, 255, 255, 0.06),
+    inset 0 0 100px rgba(229, 165, 62, 0.025),
+    0 0 40px rgba(255, 255, 255, 0.04);
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  z-index: 8;
+
+  animation:
+    glassFloat 3s ease-in-out infinite,
+    glassAppear 0.9s ease forwards;
+}
+
+
+/* Glass reflection */
+
+.glass-intro__glass::before {
+  content: "";
+
+  position: absolute;
+  inset: -50%;
+
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.18) 48%,
+    transparent 55%
+  );
+
+  transform: translateX(-60%) rotate(15deg);
+
+  animation: glassReflection 2.8s ease-in-out infinite;
+}
+
+
+/* Glass edge */
+
+.glass-intro__glass::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    inset 1px 0 rgba(255, 255, 255, 0.2),
+    inset -1px 0 rgba(255, 255, 255, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GLASS LOGO / CONTENT
+   ========================================================= */
+
+.glass-intro__glass-content {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  z-index: 4;
+
+  padding: 30px;
+}
+
+.glass-intro__glass-content h1 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: clamp(28px, 4vw, 58px);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  text-shadow:
+    0 0 15px rgba(255, 255, 255, 0.25),
+    0 0 40px rgba(229, 165, 62, 0.15);
+}
+
+.glass-intro__glass-content h1 span {
+  display: block;
+
+  color: var(--gold);
+
+  margin-top: 8px;
+
+  text-shadow:
+    0 0 15px rgba(229, 165, 62, 0.5),
+    0 0 45px rgba(229, 165, 62, 0.2);
+}
+
+.glass-intro__glass-content p {
+  margin: 20px 0 0;
+
+  color: rgba(247, 247, 248, 0.65);
+
+  font-size: clamp(10px, 1vw, 14px);
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HAMMER
+   ========================================================= */
+
+.glass-intro__hammer {
+  position: absolute;
+
+  width: min(170px, 18vw);
+  height: min(300px, 36vw);
+
+  top: 50%;
+  left: 50%;
+
+  transform-origin: 50% 90%;
+
+  transform:
+    translate(-5%, -88%)
+    rotate(-42deg)
+    translateX(500px);
+
+  z-index: 30;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(0 20px 25px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 15px rgba(229, 165, 62, 0.08));
+
+  animation: hammerStrike 2.4s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+}
+
+
+/* Hammer handle */
+
+.glass-intro__hammer-handle {
+  position: absolute;
+
+  width: 32px;
+  height: 210px;
+
+  left: 50%;
+  top: 65px;
+
+  transform: translateX(-50%);
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #151515,
+      #3c3c3c 35%,
+      #111 70%,
+      #292929
+    );
+
+  box-shadow:
+    inset 2px 0 rgba(255, 255, 255, 0.1),
+    0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Hammer head */
+
+.glass-intro__hammer-head {
+  position: absolute;
+
+  left: 50%;
+  top: 25px;
+
+  width: 115px;
+  height: 75px;
+
+  transform: translateX(-50%);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #666,
+      #222 35%,
+      #111 70%,
+      #555
+    );
+
+  box-shadow:
+    inset 3px 3px rgba(255, 255, 255, 0.16),
+    inset -4px -5px rgba(0, 0, 0, 0.5),
+    0 15px 30px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   IMPACT
+   ========================================================= */
+
+.glass-intro__impact {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  z-index: 25;
+
+  background: var(--white);
+
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(229, 165, 62, 0.7),
+    0 0 70px rgba(229, 165, 62, 0.4);
+
+  animation: impactFlash 2.4s ease forwards;
+}
+
+
+/* =========================================================
+   CRACKS
+   ========================================================= */
+
+.glass-intro__cracks {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation: cracksAppear 2.4s ease forwards;
+}
+
+.glass-intro__crack {
+  position: absolute;
+
+  width: 2px;
+
+  height: 150px;
+
+  left: 50%;
+  top: 50%;
+
+  transform-origin: top center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+
+  filter:
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+
+  clip-path: polygon(
+    40% 0,
+    60% 0,
+    52% 30%,
+    70% 48%,
+    50% 60%,
+    65% 100%,
+    35% 100%,
+    48% 63%,
+    30% 48%,
+    48% 30%
+  );
+}
+
+.glass-intro__crack:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.glass-intro__crack:nth-child(2) {
+  transform: rotate(45deg) scaleY(0.8);
+}
+
+.glass-intro__crack:nth-child(3) {
+  transform: rotate(90deg) scaleY(0.9);
+}
+
+.glass-intro__crack:nth-child(4) {
+  transform: rotate(135deg) scaleY(0.75);
+}
+
+.glass-intro__crack:nth-child(5) {
+  transform: rotate(180deg) scaleY(0.9);
+}
+
+.glass-intro__crack:nth-child(6) {
+  transform: rotate(225deg) scaleY(0.8);
+}
+
+.glass-intro__crack:nth-child(7) {
+  transform: rotate(270deg) scaleY(0.85);
+}
+
+.glass-intro__crack:nth-child(8) {
+  transform: rotate(315deg) scaleY(0.75);
+}
+
+
+/* =========================================================
+   SHATTER PIECES
+   ========================================================= */
+
+.glass-intro__shards {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 40;
+
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+.glass-intro__shard {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 80px;
+  height: 100px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.24),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  clip-path: polygon(
+    50% 0,
+    100% 35%,
+    78% 100%,
+    20% 75%,
+    0 25%
+  );
+
+  backdrop-filter: blur(2px);
+
+  box-shadow:
+    inset 0 0 15px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+
+/* Individual shards */
+
+.glass-intro__shard:nth-child(1) {
+  --x: -330px;
+  --y: -230px;
+  --r: -35deg;
+}
+
+.glass-intro__shard:nth-child(2) {
+  --x: 280px;
+  --y: -250px;
+  --r: 45deg;
+}
+
+.glass-intro__shard:nth-child(3) {
+  --x: -360px;
+  --y: 80px;
+  --r: -70deg;
+}
+
+.glass-intro__shard:nth-child(4) {
+  --x: 350px;
+  --y: 90px;
+  --r: 80deg;
+}
+
+.glass-intro__shard:nth-child(5) {
+  --x: -220px;
+  --y: 290px;
+  --r: 120deg;
+}
+
+.glass-intro__shard:nth-child(6) {
+  --x: 230px;
+  --y: 300px;
+  --r: -100deg;
+}
+
+.glass-intro__shard:nth-child(7) {
+  --x: -90px;
+  --y: -330px;
+  --r: 70deg;
+}
+
+.glass-intro__shard:nth-child(8) {
+  --x: 100px;
+  --y: -330px;
+  --r: -70deg;
+}
+
+
+/* =========================================================
+   SHATTER STATE
+   ========================================================= */
+
+.glass-intro.is-shattered .glass-intro__glass {
+  animation:
+    glassShatter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.glass-intro.is-shattered .glass-intro__shards {
+  opacity: 1;
+
+  animation:
+    shardsContainer 1.5s ease forwards;
+}
+
+.glass-intro.is-shattered .glass-intro__shard {
+  animation:
+    shardFly 1.4s cubic-bezier(0.15, 0.8, 0.25, 1) forwards;
+}
+
+.glass-intro.is-shattered .glass-intro__cracks {
+  opacity: 1;
+}
+
+.glass-intro.is-shattered .glass-intro__brand {
+  animation:
+    brandExit 0.5s ease forwards;
+}
+
+
+/* =========================================================
+   SKIP BUTTON
+   ========================================================= */
+
+.glass-intro__skip {
+  position: absolute;
+
+  right: 30px;
+  bottom: 30px;
+
+  z-index: 100;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90px;
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+  animation: skipAppear 1s ease 1s both;
+}
+
+.glass-intro__skip:hover {
+  color: var(--white);
+
+  border-color: var(--gold);
+
+  background: rgba(229, 165, 62, 0.1);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 25px rgba(229, 165, 62, 0.12);
+}
+
+.glass-intro__skip:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   LOADING / HINT
+   ========================================================= */
+
+.glass-intro__hint {
+  position: absolute;
+
+  bottom: 8%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  color: rgba(247, 247, 248, 0.45);
+
+  font-size: 10px;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  animation:
+    hintPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FINAL EXIT
+   ========================================================= */
+
+.glass-intro.is-complete {
+  pointer-events: none;
+
+  animation:
+    introExit 0.9s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes brandReveal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+@keyframes glassAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.75)
+      rotateX(10deg)
+      rotateY(-8deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotateX(1deg)
+      rotateY(-2deg);
+  }
+}
+
+
+@keyframes glassFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -10px;
+  }
+}
+
+
+@keyframes glassReflection {
+  0% {
+    transform:
+      translateX(-70%)
+      rotate(15deg);
+  }
+
+  45%,
+  100% {
+    transform:
+      translateX(70%)
+      rotate(15deg);
+  }
+}
+
+
+@keyframes hammerStrike {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-5%, -88%)
+      rotate(-42deg)
+      translateX(500px);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  48% {
+    transform:
+      translate(-5%, -88%)
+      rotate(-42deg)
+      translateX(500px);
+  }
+
+  64% {
+    transform:
+      translate(-5%, -88%)
+      rotate(-20deg)
+      translateX(0);
+  }
+
+  70% {
+    transform:
+      translate(-5%, -88%)
+      rotate(-12deg)
+      translateX(-12px);
+  }
+
+  76% {
+    transform:
+      translate(-5%, -88%)
+      rotate(-18deg)
+      translateX(6px);
+  }
+
+  84% {
+    transform:
+      translate(-5%, -88%)
+      rotate(-14deg)
+      translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-5%, -88%)
+      rotate(-14deg)
+      translateX(0);
+  }
+}
+
+
+@keyframes impactFlash {
+  0%,
+  58% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  63% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(7);
+  }
+
+  74% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(18);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes cracksAppear {
+  0%,
+  60% {
+    opacity: 0;
+  }
+
+  64% {
+    opacity: 1;
+  }
+
+  72% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes glassShatter {
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  25% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.03);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.3);
+  }
+}
+
+
+@keyframes shardsContainer {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes shardFly {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(0, 0)
+      rotate(0deg)
+      scale(0.7);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(var(--x), var(--y))
+      rotate(var(--r))
+      scale(0.2);
+  }
+}
+
+
+@keyframes brandExit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+@keyframes hintPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+
+@keyframes skipAppear {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes introExit {
+  0% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.04);
+
+    visibility: hidden;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .glass-intro__scene {
+    width: 90vw;
+    height: 65vh;
+  }
+
+  .glass-intro__glass {
+    width: 42vw;
+    height: 52vh;
+  }
+
+  .glass-intro__hammer {
+    transform:
+      translate(-5%, -88%)
+      rotate(-42deg)
+      translateX(350px);
+  }
+
+  .glass-intro__shard:nth-child(1) {
+    --x: -240px;
+    --y: -180px;
+  }
+
+  .glass-intro__shard:nth-child(2) {
+    --x: 220px;
+    --y: -190px;
+  }
+
+  .glass-intro__shard:nth-child(3) {
+    --x: -250px;
+    --y: 60px;
+  }
+
+  .glass-intro__shard:nth-child(4) {
+    --x: 250px;
+    --y: 70px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .glass-intro {
+    min-height: 100svh;
+  }
+
+  .glass-intro__brand {
+    top: 7%;
+    width: 90%;
+  }
+
+  .glass-intro__brand-title {
+    font-size: 15px;
+
+    letter-spacing: 0.12em;
+
+    white-space: normal;
+  }
+
+  .glass-intro__brand-line {
+    margin-top: 9px;
+  }
+
+  .glass-intro__scene {
+    width: 100vw;
+    height: 60vh;
+  }
+
+  .glass-intro__glass {
+    width: 62vw;
+    height: 48vh;
+
+    min-width: 220px;
+    min-height: 300px;
+  }
+
+  .glass-intro__glass-content {
+    padding: 20px;
+  }
+
+  .glass-intro__glass-content h1 {
+    font-size: clamp(25px, 8vw, 38px);
+  }
+
+  .glass-intro__glass-content p {
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+  }
+
+  .glass-intro__hammer {
+    width: 110px;
+    height: 220px;
+
+    transform:
+      translate(-5%, -88%)
+      rotate(-42deg)
+      translateX(280px);
+  }
+
+  .glass-intro__hammer-handle {
+    width: 23px;
+    height: 155px;
+
+    top: 55px;
+  }
+
+  .glass-intro__hammer-head {
+    width: 82px;
+    height: 55px;
+
+    top: 20px;
+  }
+
+  .glass-intro__shard {
+    width: 50px;
+    height: 65px;
+  }
+
+  .glass-intro__shard:nth-child(1) {
+    --x: -170px;
+    --y: -160px;
+  }
+
+  .glass-intro__shard:nth-child(2) {
+    --x: 170px;
+    --y: -150px;
+  }
+
+  .glass-intro__shard:nth-child(3) {
+    --x: -180px;
+    --y: 50px;
+  }
+
+  .glass-intro__shard:nth-child(4) {
+    --x: 180px;
+    --y: 60px;
+  }
+
+  .glass-intro__shard:nth-child(5) {
+    --x: -130px;
+    --y: 180px;
+  }
+
+  .glass-intro__shard:nth-child(6) {
+    --x: 130px;
+    --y: 180px;
+  }
+
+  .glass-intro__shard:nth-child(7) {
+    --x: -60px;
+    --y: -210px;
+  }
+
+  .glass-intro__shard:nth-child(8) {
+    --x: 70px;
+    --y: -210px;
+  }
+
+  .glass-intro__skip {
+    right: 18px;
+    bottom: 18px;
+
+    min-width: 78px;
+    height: 38px;
+
+    padding: 0 14px;
+
+    font-size: 9px;
+  }
+
+  .glass-intro__hint {
+    bottom: 9%;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .glass-intro__glass {
+    width: 68vw;
+    height: 45vh;
+  }
+
+  .glass-intro__glass-content h1 {
+    font-size: 25px;
+  }
+
+  .glass-intro__glass-content p {
+    font-size: 7px;
+  }
+
+  .glass-intro__hammer {
+    transform:
+      translate(-5%, -88%)
+      rotate(-42deg)
+      translateX(240px);
+  }
+
+  .glass-intro__skip {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-intro,
+  .glass-intro *,
+  .glass-intro::before,
+  .glass-intro::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

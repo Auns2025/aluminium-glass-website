@@ -19,7 +19,7 @@ const Hero = () => {
         {/* Background Building Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-banner.png"
+            src="/images/Gemini_Generated_Image_bq1cuebq1cuebq1c.jpeg"
             onError={(e) => {
               e.currentTarget.src =
                 "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop";
