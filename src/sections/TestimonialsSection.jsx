@@ -3,21 +3,21 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'The aluminium slimline doors transformed our villa completely. Sound insulation is remarkable and the finish is top notch.',
-    author: 'Tariq Mehmood',
-    role: 'Villa Owner, ',
+    quote: 'Abdullah Mir Glass & Aluminium delivered an outstanding experience from start to finish. The quality of the aluminium windows and doors they installed completely transformed our home.',
+    author: 'Sarah Al-Farsi',
+    // role: 'Villa Owner, ',
     rating: 5,
   },
   {
-    quote: 'Delivered 4 floors of double-glazed curtain wall facade on exact schedule. Engineering precision and team professionalism were commendable.',
-    author: 'Engr. Imran Khan',
-    role: 'Project Director, ',
+    quote: 'We trusted Abdullah Mir Glass & Aluminium with our office glass partitions, and we couldn’t be happier with the results. The project was completed on time, and the quality of the materials is exceptional.',
+    author: 'Ahmed Al-Baker',
+    // role: 'Project Director, ',
     rating: 5,
   },
   {
-    quote: 'Clean frameless glass shower cubicles and decorative mirrors installed with immaculate detail. Highly satisfied with their service.',
-    author: 'Dr. Ayesha Siddiqui',
-    role: 'Interior Designer',
+    quote: 'The custom-made glass shower enclosure was exactly what we envisioned for our bathroom renovation. We highly recommend their services – excellent craftsmanship and customer service!',
+    author: 'Emily Jacobs',
+    // role: 'Interior Designer',
     rating: 5,
   },
 ];

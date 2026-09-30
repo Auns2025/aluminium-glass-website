@@ -15,7 +15,7 @@ const services = [
     image: "/images/Gemini_Generated_Image_4e3hy14e3hy14e3h.jpeg",
     title: "Aluminium Doors & Windows",
     label: "Slimline Systems",
-    description: "Strong, durable, sound-insulated and stylish aluminium door and window profiles tailored for modern spaces.",
+    description: "At Abdullah Mir Glass & Aluminium, our Aluminium Doors and Windows are designed to offer a perfect combination of strength, durability, and elegance.",
     icon: DoorClosed,
   },
   {
@@ -23,7 +23,7 @@ const services = [
     image: "/images/Gemini_Generated_Image_idr3v2idr3v2idr3.jpeg",
     title: "Glass & Mirror Works",
     label: "Custom Glazing",
-    description: "Custom LED mirrors, tempered glass partitions, and decorative architectural glass crafted to match your design.",
+    description: "From custom mirrors to decorative glass installations, we provide high-quality craftsmanship tailored to your design vision, offering sleek, modern solutions that reflect your unique style.",
     icon: Sparkles,
   },
   {
@@ -31,7 +31,7 @@ const services = [
     image: "/images/Gemini_Generated_Image_ohj5lkohj5lkohj5.jpeg",
     title: "Automatic Sliding Doors",
     label: "Smart Automation",
-    description: "Smooth, secure, sensor-operated automatic glass sliding doors for effortless entrance access.",
+    description: "SOur Automatic Sliding Doors combine convenience, style, and security, making them a perfect solution for high-traffic areas. Designed for smooth, effortless operation, these doors offer easy access",
     icon: Layers,
   },
   {
@@ -47,15 +47,15 @@ const services = [
     image: "/images/Gemini_Generated_Image_2mgwqs2mgwqs2mgw.jpeg",
     title: "Steel & Metal Fabrication",
     label: "Structural Metal",
-    description: "Precision CNC laser-cut stainless steel frames, railings, pergolas, and architectural metal support systems.",
+    description: "From structural frameworks to decorative elements, we provide precision-engineered steel products that ensure durability, strength, and aesthetic appeal for both residential and commercial projects.",
     icon: Wrench,
   },
   {
     number: "06",
-    image: "/images/making-windows-bird-friendly-with-saflex-r-flysafe-3d_2.jpg",
-    title: "Safety & Acoustic Glazing",
+    image: "/images/pexels-heyho-7546284.jpg",
+    title: "Shower Enclosures",
     label: "Engineered Glass",
-    description: "Laminated soundproof and bullet-resistant multi-layered glass solutions for private residences and banks.",
+    description: "Shower Enclosures combine elegance and functionality, offering customized designs to fit any space. Crafted with precision, they add a modern touch to your bathroom.",
     icon: ShieldAlert,
   },
 ];
