@@ -48,14 +48,14 @@ const Hero = () => {
           </video>
 
           {/* Deep Dark Left Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070d18] via-[#070d18]/90 md:via-[#070d18]/70 to-[#070d18]/40 md:to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-r md:to-transparent z-[1]" />
           
           {/* Top/Bottom Subtle Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-[1]" />
           
           {/* Diagonal Golden Line */}
           <div 
-            className="hidden md:block absolute top-0 bottom-0 left-[48%] lg:left-[45%] w-[3px] bg-gradient-to-b from-transparent via-[#f5b041]/60 to-transparent transform -skew-x-[22deg] z-[2] opacity-75 shadow-[0_0_15px_rgba(245,176,65,0.6)]"
+            // className="hidden md:block absolute top-0 bottom-0 left-[48%] lg:left-[45%] w-[3px] bg-gradient-to-b from-transparent via-[#f5b041]/60 to-transparent transform -skew-x-[22deg] z-[2] opacity-75 shadow-[0_0_15px_rgba(245,176,65,0.6)]"
           />
         </div>
 
