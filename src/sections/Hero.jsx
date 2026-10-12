@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Gem,
@@ -9,27 +9,46 @@ import {
 } from "lucide-react";
 
 const Hero = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.play().catch(() => {
+        // Autoplay handled
+      });
+    }
+  }, []);
+
   return (
     // Outer Container: Top padding drastically reduced to move hero up
-    <section className="relative min-h-screen w-full  text-white pt-2 sm:pt-3 px-3 sm:px-5 lg:px-6 pb-3 sm:pb-5 flex items-center justify-center">
+    <section className="relative min-h-screen w-full text-white pt-2 sm:pt-3 px-3 sm:px-5 lg:px-6 pb-3 sm:pb-5 flex items-center justify-center">
       
       {/* The Rounded Banner Card */}
       <div className="relative w-full h-[calc(100vh-1rem)] sm:h-[calc(100vh-1.5rem)] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl flex items-center">
         
-        {/* Background Building Image */}
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/Gemini_Generated_Image_bq1cuebq1cuebq1c.jpeg"
-            onError={(e) => {
-              e.currentTarget.src =
-                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop";
-            }}
-            alt="Modern Glass and Aluminum Architecture"
-            className="w-full h-full object-cover object-right md:object-center transform scale-100 animate-fade-in-scale"
-          />
+          <video
+            ref={videoRef}
+            src="/images/logo-animation.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-center md:object-[68%_center] transform scale-100"
+          >
+            <source src="/images/logo-animation.mp4" type="video/mp4" />
+            <source src="/images/logo animation.mp4" type="video/mp4" />
+            {/* Fallback text if video isn't supported */}
+            Your browser does not support the video tag.
+          </video>
 
           {/* Deep Dark Left Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070d18] via-[#070d18]/90 md:via-[#070d18]/80 to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070d18] via-[#070d18]/90 md:via-[#070d18]/70 to-[#070d18]/40 md:to-transparent z-[1]" />
           
           {/* Top/Bottom Subtle Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-[1]" />
