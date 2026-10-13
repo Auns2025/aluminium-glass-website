@@ -74,24 +74,22 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#070b12] text-white py-20 md:py-28"
+      className="relative overflow-hidden bg-[#f7f5f0] py-20 text-[#101214] md:py-28"
     >
-      {/* Background Subtle Grid & Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#f5b041]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[350px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d9b66e]/10 blur-[120px]" />
 
-      {/* Section Heading */}
-      <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5b041]/10 border border-[#f5b041]/30 text-[#f5b041] text-xs font-bold uppercase tracking-[2px] mb-3">
-          <Sparkles className="w-3.5 h-3.5" />
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#d9b66e]/30 bg-[#d9b66e]/10 px-3 py-1 text-xs font-bold uppercase tracking-[2px] text-[#b8893e]">
+          <Sparkles className="h-3.5 w-3.5" />
           <span>Our Specialized Services</span>
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        <h2 className="text-3xl font-extrabold tracking-tight text-[#101214] md:text-5xl">
           Comprehensive Architectural <br className="hidden sm:inline" />
-          <span className="text-[#f5b041]">Glass &amp; Aluminum</span> Solutions
+          <span className="bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] bg-clip-text text-transparent">Glass &amp; Aluminium</span> Solutions
         </h2>
 
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#252525] md:text-lg">
           From new luxury installations to custom metal fabrication, our certified engineers deliver precision-crafted, secure, and enduring architectural solutions.
         </p>
       </div>
@@ -170,7 +168,11 @@ const ServicesSection = () => {
                   {/* Bottom Content */}
                   <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white z-10 flex flex-col justify-end">
                     {service.label && (
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f5b041] mb-1.5">
+                      /* FORCED LABEL COLOR #f1ae41 */
+                      <p 
+                        className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5 !text-[#f1ae41]"
+                        style={{ color: '#f1ae41' }}
+                      >
                         {service.label}
                       </p>
                     )}
@@ -179,7 +181,11 @@ const ServicesSection = () => {
                       {service.title}
                     </h3>
 
-                    <p className="mt-2 text-xs sm:text-sm text-neutral-300 leading-relaxed line-clamp-3">
+                    {/* FORCED WHITE DESCRIPTION */}
+                    <p 
+                      className="mt-2 text-xs sm:text-sm leading-relaxed line-clamp-3 !text-white"
+                      style={{ color: '#ffffff' }}
+                    >
                       {service.description}
                     </p>
 

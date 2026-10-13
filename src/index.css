@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 :root {
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --gold-primary: #f5b041;
-  --gold-hover: #e09e35;
+  --font-sans: 'Inter', 'Segoe UI', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --gold-primary: #b8893e;
+  --gold-soft: #d9b66e;
+  --ivory: #f7f5f0;
+  --white: #ffffff;
+  --obsidian: #101214;
+  --body: #252525;
+  --muted: #6f6b63;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  background-color: #0b0f19;
-  color: #0f172a;
+  background: var(--ivory);
+  color: var(--obsidian);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -23,7 +34,20 @@ body {
   flex-direction: column;
 }
 
-/* Custom Animation Keyframes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--body);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -47,7 +71,8 @@ body {
 }
 
 @keyframes floatGentle {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -56,7 +81,8 @@ body {
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     transform: scale(1);
   }
@@ -75,16 +101,6 @@ body {
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-/* Utility Animation Classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -111,7 +127,6 @@ body {
   animation-play-state: paused;
 }
 
-/* Animation Delays */
 .animation-delay-100 { animation-delay: 100ms; }
 .animation-delay-200 { animation-delay: 200ms; }
 .animation-delay-300 { animation-delay: 300ms; }
@@ -120,7 +135,6 @@ body {
 .animation-delay-600 { animation-delay: 600ms; }
 .animation-delay-700 { animation-delay: 700ms; }
 
-/* Custom Glass & Glowing Border Utilities */
 .glass-dark {
   background: rgba(13, 18, 30, 0.75);
   backdrop-filter: blur(16px);
@@ -129,7 +143,7 @@ body {
 }
 
 .glass-gold-glow {
-  box-shadow: 0 0 25px rgba(245, 176, 65, 0.15);
+  box-shadow: 0 0 25px rgba(184, 137, 62, 0.15);
 }
 
 .glass-card-hover {
@@ -138,7 +152,7 @@ body {
 
 .glass-card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 30px rgba(245, 176, 65, 0.2);
-  border-color: rgba(245, 176, 65, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12), 0 0 30px rgba(184, 137, 62, 0.12);
+  border-color: rgba(184, 137, 62, 0.4);
 }
 

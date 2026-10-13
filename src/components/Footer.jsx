@@ -46,9 +46,9 @@ const Footer = () => {
             {/* Footer Content */}
             <div className="flex-1 border-b border-white/10 px-5 pb-10 pt-10 sm:px-8 sm:pt-12 lg:px-12 lg:pt-14 xl:px-16">
 
-              <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-10">
+              <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-8">
 
-                {/* Company */}
+                {/* Company - spans 4 columns */}
                 <div className="space-y-4 sm:col-span-2 lg:col-span-4">
                   <Link to="/" className="inline-flex items-center gap-2">
                     <img
@@ -58,12 +58,15 @@ const Footer = () => {
                     />
                   </Link>
 
-                  <p className="max-w-md text-sm leading-relaxed text-slate-300">
+                  {/* FORCED WHITE DESCRIPTION */}
+                  <p 
+                    className="max-w-sm text-sm leading-relaxed !text-white"
+                    style={{ color: '#ffffff' }}
+                  >
                     At Abdullah Mir Glass & Aluminium, we're dedicated to transforming
                     spaces with the beauty and functionality of glass and aluminium.
                     Our team brings expertise and care to every project, creating
-                    customised solutions that reflect your vision and enhance your
-                    surroundings.
+                    customised solutions that reflect your vision.
                   </p>
 
                   {/* Social Links */}
@@ -207,11 +210,8 @@ const Footer = () => {
                     {/* Address */}
                     <div className="flex items-start gap-2.5">
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-300" />
-                      <span className="text-xs leading-snug text-slate-300 sm:text-sm">
-                        SHON BUSINESS PARK,
-                        <br />
-                        ZONE 02 BUILDING, DUBAI INVESTMENT PARK (DIP) UNITED ARAB
-                        EMIRATES DUBAI
+                      <span className="text-xs leading-snug text-slate-300">
+                        SHON BUSINESS PARK, ZONE 02 BUILDING, DUBAI INVESTMENT PARK (DIP) UAE DUBAI
                       </span>
                     </div>
 
@@ -220,7 +220,7 @@ const Footer = () => {
                       <Phone className="h-4 w-4 shrink-0 text-slate-300" />
                       <a
                         href="tel:+971526427235"
-                        className="text-xs text-slate-300 transition-colors hover:text-white sm:text-sm"
+                        className="text-xs text-slate-300 transition-colors hover:text-white"
                       >
                         +971526427235
                       </a>
@@ -231,7 +231,7 @@ const Footer = () => {
                       <Mail className="mt-0.5 h-4 w-4 shrink-0 text-slate-300" />
                       <a
                         href="mailto:amaluminumglassdubai@gmail.com"
-                        className="break-all text-xs text-slate-300 transition-colors hover:text-white sm:text-sm"
+                        className="break-all text-xs text-slate-300 transition-colors hover:text-white"
                       >
                         amaluminumglassdubai@gmail.com
                       </a>
@@ -253,16 +253,16 @@ const Footer = () => {
 
             {/* Bottom Footer */}
             <div className="border-t border-white/10 px-5 py-6 sm:px-8 sm:py-7 lg:px-12 lg:py-8 xl:px-16">
-              <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
-                <p className="text-center text-xs text-slate-300 sm:text-sm md:text-left">
+              <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:gap-3">
+                <p className="order-2 text-center text-xs text-slate-300 md:order-1 md:text-left">
                   © {new Date().getFullYear()} Aluminium & Glass. All rights reserved.
                 </p>
 
-                <p className="text-center text-xs text-white/50 md:text-sm">
+                <p className="order-1 text-center text-xs text-white/50 md:order-2 md:text-sm">
                   "Quality, precision, and design that lasts."
                 </p>
 
-                <div className="flex flex-wrap items-center justify-center gap-3 md:justify-end md:gap-4">
+                <div className="order-3 flex flex-wrap items-center justify-center gap-4 md:justify-end">
                   <Link
                     to="/contact"
                     className="text-xs text-slate-300 transition-colors duration-200 hover:text-white sm:text-sm"

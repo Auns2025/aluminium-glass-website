@@ -11,39 +11,32 @@ const ContactCTA = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-white py-24 md:py-32"
+      className="relative overflow-hidden bg-[#f7f5f0] py-24 md:py-32"
     >
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        {/* Heading */}
-        <h2 className="flex flex-wrap items-center justify-center gap-x-[0.3em] text-4xl font-extrabold tracking-tight text-neutral-900 md:text-5xl lg:text-6xl">
+        <h2 className="flex flex-wrap items-center justify-center gap-x-[0.3em] text-4xl font-extrabold tracking-tight text-[#101214] md:text-5xl lg:text-6xl">
           <span>Ready</span>
           <span>to</span>
           <span>start</span>
           <span>your</span>
-          <span className="bg-gradient-to-r from-[#f92c53] via-[#eeab21] to-[#00c9a7] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] bg-clip-text text-transparent">
             project?
           </span>
         </h2>
 
-        {/* Description */}
-        <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-neutral-700/75">
-          Let&apos;s talk about your glass and aluminium project. No
-          pressure, just a conversation about what&apos;s possible.
+        <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-[#252525]/80">
+          Let&apos;s talk about your glass and aluminium project. No pressure, just a conversation about what&apos;s possible.
         </p>
 
-        {/* CTA Button */}
         <div className="mt-10">
-          <div className="inline-block rounded-full bg-gradient-to-r from-[#f92c53] via-[#eeab21] to-[#00c9a7] bg-[length:200%_200%] p-[2px]">
+          <div className="inline-block rounded-full bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] p-[2px]">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-10 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-colors duration-200 hover:bg-neutral-900 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-[#f7f5f0] px-10 py-4 text-sm font-bold uppercase tracking-wider text-[#101214] transition-colors duration-200 hover:bg-[#101214] hover:text-[#f7f5f0]"
             >
               Talk to Us
 
-              <ArrowUpRight
-                className="h-4 w-4"
-                strokeWidth={2.5}
-              />
+              <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
             </Link>
           </div>
         </div>
@@ -53,9 +46,9 @@ const ContactCTA = () => {
           {/* Email */}
           <a
             href="mailto:info@aluminiumglass.com"
-            className="group flex items-center gap-2 text-sm text-neutral-700/75 transition-colors hover:text-[#f05a47]"
+            className="group flex items-center gap-2 text-sm text-neutral-700/75 transition-colors hover:text-[#d9b66e]"
           >
-            <Mail className="h-4 w-4 text-[#f05a47]" />
+            <Mail className="h-4 w-4 text-[#d9b66e]" />
 
             <span className="font-semibold">
              amaluminumglassdubai@gmail.com
@@ -65,9 +58,9 @@ const ContactCTA = () => {
           {/* Phone */}
           <a
             href="tel:+923001234567"
-            className="group flex items-center gap-2 text-sm text-neutral-700/75 transition-colors hover:text-[#f05a47]"
+            className="group flex items-center gap-2 text-sm text-neutral-700/75 transition-colors hover:text-[#d9b66e]"
           >
-            <Phone className="h-4 w-4 text-[#f05a47]" />
+            <Phone className="h-4 w-4 text-[#d9b66e]" />
 
             <span className="font-semibold">
               +971549982498
@@ -77,9 +70,9 @@ const ContactCTA = () => {
           {/* Website */}
           <a
             href="/"
-            className="group flex items-center gap-2 text-sm text-neutral-700/75 transition-colors hover:text-[#f05a47]"
+            className="group flex items-center gap-2 text-sm text-neutral-700/75 transition-colors hover:text-[#d9b66e]"
           >
-            <Globe className="h-4 w-4 text-[#f05a47]" />
+            <Globe className="h-4 w-4 text-[#d9b66e]" />
 
             <span className="font-semibold">
               Aluminium &amp; Glass
@@ -97,13 +90,13 @@ const ContactCTA = () => {
         </div>
       </div>
 
-      {/* Background Glow */}
+      {/* Background Glow - Updated to theme gold colors */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-1/2 h-64 w-[70%] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
+        className="pointer-events-none absolute -bottom-32 left-1/2 h-64 w-[70%] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
         style={{
           background:
-            "linear-gradient(90deg, #f92c53, #eeab21, #00c9a7)",
+            "linear-gradient(90deg, #a87830, #d9b66e, #b8893e)",
         }}
       />
     </section>

@@ -34,24 +34,21 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-[#0b0f19] text-white relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#f5b041]/5 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#f7f5f0] py-20 text-[#101214] md:py-28">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d9b66e]/10 blur-[140px]" />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-10 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5b041]/10 border border-[#f5b041]/30 text-[#f5b041] text-xs font-bold uppercase tracking-[2.5px] mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+      <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
+        <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d9b66e]/30 bg-[#d9b66e]/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[2.5px] text-[#b8893e]">
+            <Sparkles className="h-3.5 w-3.5" />
             <span>Seamless Execution</span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Our 4-Step <span className="text-[#f5b041]">Precision Process</span>
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#101214] md:text-5xl">
+            Our 4-Step <span className="bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] bg-clip-text text-transparent">Precision Process</span>
           </h2>
 
-          <p className="mt-4 text-neutral-300 text-base md:text-lg">
+          <p className="mt-4 text-base text-[#252525] md:text-lg">
             From initial laser site measurement to final architectural handover, our rigorous 4-step workflow guarantees perfection.
           </p>
         </div>
@@ -68,39 +65,37 @@ const ProcessSection = () => {
               return (
                 <div
                   key={idx}
-                  className="group relative bg-neutral-900/70 backdrop-blur-xl p-7 rounded-3xl border border-white/10 hover:border-[#f5b041]/60 shadow-[0_12px_30px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_45px_rgba(245,176,65,0.18)] transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+                  className="group relative flex flex-col justify-between rounded-3xl border border-[#ece5dc] bg-white p-7 shadow-[0_12px_30px_rgba(16,18,20,0.06)] transition-all duration-500 hover:-translate-y-2 hover:border-[#d9b66e]/60 hover:shadow-[0_20px_45px_rgba(184,137,62,0.1)]"
                 >
-                  {/* Top: Illuminated Step Circle + Time Badge */}
                   <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-black/70 border border-[#f5b041]/40 flex items-center justify-center text-[#f5b041] shadow-[0_0_20px_rgba(245,176,65,0.2)] group-hover:bg-[#f5b041] group-hover:text-black group-hover:scale-110 transition-all duration-300">
-                        <Icon className="w-7 h-7 stroke-[2.2]" />
+                    <div className="mb-6 flex items-center justify-between">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#d9b66e]/30 bg-[#d9b66e]/10 text-[#b8893e] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#b8893e] group-hover:text-[#101214]">
+                        <Icon className="h-7 w-7 stroke-[2.2]" />
                       </div>
 
-                      <span className="text-2xl font-black font-mono text-white/20 group-hover:text-[#f5b041] transition-colors duration-300">
+                      <span className="text-2xl font-black font-mono text-[#d9d1c2] transition-colors duration-300 group-hover:text-[#b8893e]">
                         {s.step}
                       </span>
                     </div>
 
                     <div className="mb-2">
-                      <span className="text-[10px] font-mono font-bold tracking-widest text-[#f5b041] uppercase">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#b8893e]">
                         {s.time}
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-[#f5b041] transition-colors">
+                    <h3 className="mb-3 text-lg font-bold text-[#101214] transition-colors group-hover:text-[#b8893e] sm:text-xl">
                       {s.title}
                     </h3>
 
-                    <p className="text-neutral-300 text-sm leading-relaxed">
+                    <p className="text-sm leading-relaxed text-[#252525]">
                       {s.desc}
                     </p>
                   </div>
 
-                  {/* Bottom Indicator */}
-                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-neutral-400 group-hover:text-white transition-colors">
+                  <div className="mt-6 flex items-center justify-between border-t border-[#ece5dc] pt-4 text-xs font-semibold text-[#6f6b63] transition-colors group-hover:text-[#101214]">
                     <span>Precision Standard</span>
-                    <ArrowRight className="w-4 h-4 text-[#f5b041] transform group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4 w-4 text-[#b8893e] transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
               );

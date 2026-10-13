@@ -14,7 +14,7 @@ const DashboardDemo = () => {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-5xl">
             <span>Explore your project</span>
             <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-[#f92c53] via-[#eeab21] to-[#00c9a7] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] bg-clip-text text-transparent">
               {" "}before we build it.
             </span>
           </h2>
@@ -27,13 +27,13 @@ const DashboardDemo = () => {
 
         {/* Preview */}
         <div className="relative mx-auto max-w-5xl">
-          {/* Glow */}
+          {/* Glow - Updated to gold tones */}
           <span
             aria-hidden="true"
             className="pointer-events-none absolute -inset-6 -z-10 rounded-[32px] opacity-60 blur-3xl"
             style={{
               background:
-                "radial-gradient(50% 70% at 30% 40%, rgba(249,44,83,0.18), transparent 70%), radial-gradient(50% 70% at 80% 60%, rgba(238,171,33,0.14), transparent 70%)",
+                "radial-gradient(50% 70% at 30% 40%, rgba(217,182,110,0.22), transparent 70%), radial-gradient(50% 70% at 80% 60%, rgba(184,137,62,0.16), transparent 70%)",
             }}
           />
 
@@ -105,11 +105,11 @@ const DashboardDemo = () => {
           </Link>
         </div>
 
-        {/* CTA */}
+        {/* CTA - Updated to gold theme */}
         <div className="mt-10 flex flex-col items-center gap-3">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-10 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-colors duration-200 hover:bg-neutral-800"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] px-10 py-4 text-sm font-bold uppercase tracking-wider text-[#101214] shadow-[0_8px_24px_rgba(184,137,62,0.35)] transition-all duration-300 hover:scale-[1.02]"
           >
             View Our Projects
             <ArrowUpRight
