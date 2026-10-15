@@ -24,14 +24,14 @@ const AccentBanner = () => {
       <div className="relative h-[calc(100vh-1.5rem)] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl sm:h-[calc(100vh-2.5rem)] sm:rounded-[2.5rem]">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/Gemini_Generated_Image_tm21yatm21yatm21.jpeg"
+            src="/images/making-windows-bird-friendly-with-saflex-r-flysafe-3d_2.jpg"
             onError={(e) => {
-              e.currentTarget.src = "/images/Gemini_Generated_Image_tm21yatm21yatm21.jpeg";
+              e.currentTarget.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1800&auto=format&fit=crop";
             }}
-            alt="Glass and Aluminum project"
+            alt="AM Glass Aluminium Architectural Facade"
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 h-[120%] w-full scale-[1.15] object-cover"
+            className="absolute inset-0 h-[120%] w-full scale-[1.15] object-cover object-center"
             style={{ transform: `translate3d(0, ${offset}px, 0) scale(1.15)` }}
           />
         </div>

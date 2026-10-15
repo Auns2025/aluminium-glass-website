@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MobileActionBar from './components/MobileActionBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -26,18 +27,19 @@ function App() {
       <div className="min-h-screen flex flex-col bg-[#f7f5f0] text-[#101214] selection:bg-[#b8893e]/30 selection:text-[#101214]">
         <Header />
 
-        <main className="flex-1 w-full">
+        <main className="flex-1 w-full pb-16 md:pb-0">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
         <Footer />
+        <MobileActionBar />
       </div>
     </BrowserRouter>
   );

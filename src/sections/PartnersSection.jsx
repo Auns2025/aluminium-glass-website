@@ -1,121 +1,77 @@
 import React from 'react';
+import { Sparkles } from 'lucide-react';
 
-const techStack = [
+const partners = [
   {
-    name: '',
-    color: '#FF5D01',
-    icon: (
-      <img 
-        src="/images/Gemini_Generated_Image_5gnyq55gnyq55gny.jpeg" 
-        alt="Astro Icon" 
-        className="h-full w-full object-cover rounded-xl transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:scale-105"
-      />
-    ),
+    name: 'EMAAR',
+    image: '/images/WhatsAppImage2025-01-15at17.07.533.jpeg',
+    status: 'Verified Client Asset',
   },
   {
-    name: '',
-    color: '#61DAFB',
-    icon: (
-      <img 
-        src="/images/Gemini_Generated_Image_wmobyewmobyewmob.jpeg" 
-        alt="React Icon" 
-        className="h-full w-full object-cover rounded-xl transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:scale-105"
-      />
-    ),
+    name: 'DAMAC',
+    image: '/images/WhatsAppImage2025-01-15at17.07.541.jpeg',
+    status: 'Verified Client Asset',
   },
   {
-    name: '',
-    color: '#000000',
-    icon: (
-      <img 
-        src="/images/Gemini_Generated_Image_rejnnzrejnnzrejn.jpeg" 
-        alt="Next.js Icon" 
-        className="h-full w-full object-cover rounded-xl transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:scale-105"
-      />
-    ),
+    name: 'BENTLEY',
+    image: '/images/WhatsAppImage2025-01-15at17.23.511-e1738435727869.jpeg',
+    status: 'Verified Client Asset',
   },
   {
-    name: '',
-    color: '#3178C6',
-    icon: (
-      <img 
-        src="/images/Gemini_Generated_Image_eln47heln47heln4.jpeg" 
-        alt="TypeScript Icon" 
-        className="h-full w-full object-cover rounded-xl transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:scale-105"
-      />
-    ),
-  },
-  {
-    name: '',
-    color: '#646CFF',
-    icon: (
-      <img 
-        src="/images/Gemini_Generated_Image_wgsxv6wgsxv6wgsx.jpeg" 
-        alt="Vite Icon" 
-        className="h-full w-full object-cover rounded-xl transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:scale-105"
-      />
-    ),
+    name: 'GODIVA',
+    image: '/images/WhatsAppImage2025-01-15at17.23.512-e1738439401206.jpeg',
+    status: 'Verified Client Asset',
   },
 ];
 
-// Continuous marquee loop ke liye array duplicate kiya gaya hai
-const marqueeItems = [...techStack, ...techStack];
+// Marquee loop
+const marqueeItems = [...partners, ...partners, ...partners];
 
-const TechStackGrid = () => {
+const PartnersSection = () => {
   return (
-    <section id="stack" className="relative overflow-hidden pt-24 pb-32 md:pt-32 md:pb-48">
-      <div className="mx-auto max-w-5xl px-6">
-        <div>
-          <p className="text-center text-xs font-medium uppercase tracking-[2.5px] text-foreground/75">
-            Built With
-          </p>
-          <h2 className="mt-5 text-center font-display text-3xl font-bold tracking-tight md:text-5xl">
-            <span className="inline-block">Our </span>{' '}
-            <span className="inline-block">Trusted </span>{' '}
-            <span className="inline-block">Partners</span>
+    <section id="partners" className="relative overflow-hidden bg-[#101214] py-20 lg:py-24 border-t border-white/10 !text-white">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#b8893e]/40 bg-[#b8893e]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-[2px] text-[#d9b66e]">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Collaboration &amp; Trust</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight !text-white">
+            Trusted Industry Relationships
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-foreground/75 md:text-lg">
-            Building lasting partnerships through quality, reliability, and trusted service.
+
+          <p className="mx-auto mt-3 max-w-xl text-center text-sm sm:text-base !text-white leading-relaxed">
+            Delivering architectural glass and aluminium engineering across leading developers, luxury brands, and institutions.
           </p>
         </div>
 
-        <div className="mt-14 flex justify-center">
-          <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <div className="flex w-max animate-marquee gap-6 md:gap-10 hover:[animation-play-state:paused]">
-              {marqueeItems.map((tech, index) => (
-                <div key={index} className="group flex shrink-0 flex-col items-center gap-3 cursor-pointer">
-                  <div
-                    className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-2xl md:rounded-3xl bg-white shadow-sm border border-border/30 p-2 transition-all duration-300 group-hover:scale-110 group-hover:border-transparent"
-                    style={{
-                      '--hover-color': tech.color,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = tech.color;
-                      e.currentTarget.style.boxShadow = `0 10px 25px -5px ${tech.color}40`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = '';
-                      e.currentTarget.style.boxShadow = '';
-                    }}
-                  >
-                    {tech.icon}
-                  </div>
-                  <span 
-                    className="text-xs md:text-sm font-semibold text-foreground/75 transition-colors duration-300"
-                    style={{ color: undefined }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = tech.color}
-                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
-                  >
-                    {tech.name}
-                  </span>
+        {/* Verified Logos Slider with Equal Visual Sizing */}
+        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] py-4">
+          <div className="flex w-max animate-marquee gap-8 sm:gap-12 md:gap-16 items-center hover:[animation-play-state:paused]">
+            {marqueeItems.map((partner, index) => (
+              <div
+                key={index}
+                className="group flex shrink-0 items-center justify-center p-3 sm:p-4 rounded-2xl bg-[#16181b] border border-white/10 shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#b8893e]/60 hover:bg-[#1c1f24] hover:shadow-[0_12px_30px_rgba(184,137,62,0.15)]"
+              >
+                <div className="h-10 w-28 sm:h-12 sm:w-36 flex items-center justify-center overflow-hidden rounded-xl bg-black/40">
+                  <img
+                    src={partner.image}
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain filter grayscale opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                    loading="lazy"
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
 };
 
-export default TechStackGrid;
+export default PartnersSection;

@@ -1,204 +1,142 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  DoorClosed,
-  Sparkles,
-  Layers,
-  Wrench,
-  ShieldAlert,
-  Building,
-} from "lucide-react";
-
-const services = [
-  {
-    number: "01",
-    image: "/images/Gemini_Generated_Image_4e3hy14e3hy14e3h.jpeg",
-    title: "Aluminium Doors & Windows",
-    label: "Slimline Systems",
-    description: "At Abdullah Mir Glass & Aluminium, our Aluminium Doors and Windows are designed to offer a perfect combination of strength, durability, and elegance.",
-    icon: DoorClosed,
-  },
-  {
-    number: "02",
-    image: "/images/Gemini_Generated_Image_idr3v2idr3v2idr3.jpeg",
-    title: "Glass & Mirror Works",
-    label: "Custom Glazing",
-    description: "From custom mirrors to decorative glass installations, we provide high-quality craftsmanship tailored to your design vision, offering sleek, modern solutions that reflect your unique style.",
-    icon: Sparkles,
-  },
-  {
-    number: "03",
-    image: "/images/Gemini_Generated_Image_ohj5lkohj5lkohj5.jpeg",
-    title: "Automatic Sliding Doors",
-    label: "Smart Automation",
-    description: "SOur Automatic Sliding Doors combine convenience, style, and security, making them a perfect solution for high-traffic areas. Designed for smooth, effortless operation, these doors offer easy access",
-    icon: Layers,
-  },
-  {
-    number: "04",
-    image: "/images/Gemini_Generated_Image_pjhskgpjhskgpjhs.jpeg",
-    title: "Structural Curtain Walls",
-    label: "Commercial Facades",
-    description: "High-performance commercial glass facades engineered for extreme wind resistance and energy efficiency.",
-    icon: Building,
-  },
-  {
-    number: "05",
-    image: "/images/Gemini_Generated_Image_2mgwqs2mgwqs2mgw.jpeg",
-    title: "Steel & Metal Fabrication",
-    label: "Structural Metal",
-    description: "From structural frameworks to decorative elements, we provide precision-engineered steel products that ensure durability, strength, and aesthetic appeal for both residential and commercial projects.",
-    icon: Wrench,
-  },
-  {
-    number: "06",
-    image: "/images/pexels-heyho-7546284.jpg",
-    title: "Shower Enclosures",
-    label: "Engineered Glass",
-    description: "Shower Enclosures combine elegance and functionality, offering customized designs to fit any space. Crafted with precision, they add a modern touch to your bathroom.",
-    icon: ShieldAlert,
-  },
-];
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { services } from '../data/services';
 
 const ServicesSection = () => {
-  const scrollServices = (direction) => {
-    const container = document.querySelector(".core-services-scroll");
-    if (!container) return;
-    const amount = 380;
-    container.scrollBy({
-      left: direction === "next" ? amount : -amount,
-      behavior: "smooth",
-    });
+  // Asymmetrical column spans for editorial architecture layout on desktop (12-column grid)
+  const getColSpanClass = (index) => {
+    switch (index) {
+      case 0:
+        return 'lg:col-span-7 aspect-[16/10]'; // Hero service
+      case 1:
+        return 'lg:col-span-5 aspect-[16/12]';
+      case 2:
+        return 'lg:col-span-4 aspect-[4/5]';
+      case 3:
+        return 'lg:col-span-4 aspect-[4/5]';
+      case 4:
+        return 'lg:col-span-4 aspect-[4/5]';
+      case 5:
+        return 'lg:col-span-5 aspect-[16/12]';
+      case 6:
+        return 'lg:col-span-7 aspect-[16/10]';
+      case 7:
+        return 'lg:col-span-4 aspect-[4/5]';
+      case 8:
+        return 'lg:col-span-4 aspect-[4/5]';
+      case 9:
+        return 'lg:col-span-4 aspect-[4/5]';
+      default:
+        return 'lg:col-span-4 aspect-[4/5]';
+    }
   };
 
   return (
-    <section
-      id="services"
-      className="relative overflow-hidden bg-[#f7f5f0] py-20 text-[#101214] md:py-28"
-    >
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[350px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d9b66e]/10 blur-[120px]" />
+    <section id="services" className="relative w-full bg-[#f7f5f0] py-20 lg:py-28 text-[#101214] overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#b8893e]/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#d9b66e]/30 bg-[#d9b66e]/10 px-3 py-1 text-xs font-bold uppercase tracking-[2px] text-[#b8893e]">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>Our Specialized Services</span>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 lg:mb-16 gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-8 h-[2px] bg-[#b8893e]" />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#b8893e]">
+                Official Scope of Services
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#101214] leading-[1.15]">
+              Architectural Systems, <br />
+              <span className="bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] bg-clip-text text-transparent">
+                Engineered with Distinction
+              </span>
+            </h2>
+          </div>
+
+          <p className="max-w-md text-sm sm:text-base text-[#6f6b63] leading-relaxed">
+            From monumental structural facades to bespoke residential glasscraft, we execute all ten specialized architectural disciplines to exacting UAE standards.
+          </p>
         </div>
 
-        <h2 className="text-3xl font-extrabold tracking-tight text-[#101214] md:text-5xl">
-          Comprehensive Architectural <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] bg-clip-text text-transparent">Glass &amp; Aluminium</span> Solutions
-        </h2>
-
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#252525] md:text-lg">
-          From new luxury installations to custom metal fabrication, our certified engineers deliver precision-crafted, secure, and enduring architectural solutions.
-        </p>
-      </div>
-
-      {/* Services Carousel */}
-      <div className="relative mt-12 sm:mt-16 max-w-[1600px] mx-auto">
-        {/* Controls */}
-        <div
-          className="pointer-events-none absolute right-8 -top-14 z-20 hidden items-center gap-3 sm:flex"
-          role="group"
-          aria-label="Service carousel controls"
-        >
-          <button
-            type="button"
-            aria-label="Previous service"
-            onClick={() => scrollServices("prev")}
-            className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-neutral-900/80 text-white shadow-lg backdrop-blur-xl transition-all duration-200 hover:scale-105 hover:border-[#f5b041] hover:text-[#f5b041] cursor-pointer"
-          >
-            <ArrowLeft className="h-5 w-5" strokeWidth={2.2} />
-          </button>
-
-          <button
-            type="button"
-            aria-label="Next service"
-            onClick={() => scrollServices("next")}
-            className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-neutral-900/80 text-white shadow-lg backdrop-blur-xl transition-all duration-200 hover:scale-105 hover:border-[#f5b041] hover:text-[#f5b041] cursor-pointer"
-          >
-            <ArrowRight className="h-5 w-5" strokeWidth={2.2} />
-          </button>
-        </div>
-
-        {/* Horizontal Scroll with Sleeker Card Width */}
-        <div className="core-services-scroll flex gap-5 overflow-x-auto scroll-smooth px-6 sm:px-10 py-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {services.map((service) => {
-            const Icon = service.icon;
+        {/* Asymmetric Editorial Image Grid (12-column layout on desktop, 1-col on mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-7">
+          {services.map((item, idx) => {
+            const spanClass = getColSpanClass(idx);
 
             return (
               <div
-                key={service.number}
-                className="group/service w-[290px] sm:w-[330px] md:w-[360px] lg:w-[380px] shrink-0 cursor-pointer rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-[#f5b041]"
-                role="button"
-                tabIndex={0}
-                aria-label={`View ${service.title}`}
+                key={item.id}
+                className={`group relative overflow-hidden rounded-2xl lg:rounded-3xl border border-[#ece5dc] bg-[#101214] shadow-[0_12px_30px_rgba(16,18,20,0.06)] transition-all duration-500 hover:shadow-[0_25px_50px_rgba(184,137,62,0.15)] hover:border-[#b8893e]/50 ${spanClass}`}
               >
-                {/* Card Container */}
-                <div className="relative block aspect-[4/4.8] sm:aspect-[4/4.6] overflow-hidden rounded-2xl bg-neutral-950 text-left border border-white/10 transition-all duration-500 hover:border-[#f5b041]/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6),0_0_25px_rgba(245,176,65,0.15)] group-hover/service:-translate-y-2">
-                  
-                  {/* Image */}
-                  <img
-                    src={service.image}
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop";
-                    }}
-                    alt={service.title}
-                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover/service:scale-110"
-                  />
+                {/* Image with subtle zoom interaction */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
 
-                  {/* Gradient Layers */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover/service:via-black/70 transition-all duration-300" />
-                  <div className="pointer-events-none absolute inset-0 bg-neutral-950/20 backdrop-blur-[2px] group-hover/service:backdrop-blur-none transition-all duration-500" />
+                {/* Editorial Gradient Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#101214] via-[#101214]/65 to-black/20 transition-opacity duration-300 group-hover:opacity-95" />
+                <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] group-hover:backdrop-blur-none transition-all duration-300" />
 
-                  {/* Top Content */}
-                  <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5 text-white z-10">
-                    {/* Icon */}
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-black/50 text-[#f5b041] shadow-lg backdrop-blur-xl transition-all duration-300 group-hover/service:scale-110 group-hover/service:border-[#f5b041] group-hover/service:bg-[#f5b041] group-hover/service:text-black">
-                      <Icon className="h-5 w-5" strokeWidth={2.2} />
-                    </div>
+                {/* Card Header: Number & Micro-Label */}
+                <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-[#d9b66e] bg-[#101214]/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                    {item.number}
+                  </span>
 
-                    {/* Number */}
-                    <span className="inline-flex items-center rounded-full border border-white/20 bg-black/40 px-3 py-1 font-mono text-xs tracking-wider text-neutral-300 backdrop-blur-xl group-hover/service:text-white group-hover/service:border-[#f5b041]/50">
-                      {service.number}
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d9b66e] bg-[#101214]/75 backdrop-blur-md px-3 py-1 rounded-full border border-[#b8893e]/30">
+                    {item.label}
+                  </span>
+                </div>
+
+                {/* Card Bottom: Title & Restrained Details */}
+                <div className="absolute bottom-0 inset-x-0 p-6 sm:p-7 z-10 flex flex-col justify-end">
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight !text-white group-hover:text-[#d9b66e] transition-colors duration-200">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs sm:text-sm !text-white leading-relaxed line-clamp-2">
+                    {item.shortDesc}
+                  </p>
+
+                  <div className="mt-4 pt-3.5 border-t border-white/15 flex items-center justify-between text-xs font-semibold !text-white group-hover:text-white transition-colors">
+                    <span className="tracking-wider uppercase text-[11px] !text-white">
+                      Specification &amp; Detailing
                     </span>
-                  </div>
-
-                  {/* Bottom Content */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white z-10 flex flex-col justify-end">
-                    {service.label && (
-                      /* FORCED LABEL COLOR #f1ae41 */
-                      <p 
-                        className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5 !text-[#f1ae41]"
-                        style={{ color: '#f1ae41' }}
-                      >
-                        {service.label}
-                      </p>
-                    )}
-
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover/service:text-[#f5b041] transition-colors duration-200">
-                      {service.title}
-                    </h3>
-
-                    {/* FORCED WHITE DESCRIPTION */}
-                    <p 
-                      className="mt-2 text-xs sm:text-sm leading-relaxed line-clamp-3 !text-white"
-                      style={{ color: '#ffffff' }}
-                    >
-                      {service.description}
-                    </p>
-
-                    <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-neutral-400 group-hover/service:text-white transition-colors">
-                      <span>Explore Details</span>
-                      <ArrowRight className="w-4 h-4 text-[#f5b041] transform group-hover/service:translate-x-1 transition-transform" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-[#b8893e] group-hover:text-[#101214] !text-white transition-all duration-300">
+                      <ArrowUpRight className="h-4 w-4 stroke-[2.2]" />
                     </div>
                   </div>
                 </div>
+
+                {/* Direct link anchor covering the card */}
+                <Link
+                  to="/contact"
+                  className="absolute inset-0 z-20"
+                  aria-label={`Inquire about ${item.title}`}
+                />
               </div>
             );
           })}
         </div>
+
+        {/* Section Footer CTA */}
+        <div className="mt-14 text-center">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-3 rounded-full bg-[#101214] px-8 py-4 text-xs font-bold uppercase tracking-wider !text-white shadow-lg transition-all duration-300 hover:bg-[#b8893e] hover:text-[#101214] hover:shadow-xl"
+          >
+            <span>Request Full Architectural Catalog &amp; Quote</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );

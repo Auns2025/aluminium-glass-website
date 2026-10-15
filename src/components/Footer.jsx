@@ -1,11 +1,14 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   MapPin,
   Phone,
   Mail,
   ArrowUpRight,
-  Clock,
+  Globe,
+  MessageSquare,
 } from "lucide-react";
+import { services } from "../data/services";
 
 const Footer = () => {
   const quickLinks = [
@@ -16,271 +19,190 @@ const Footer = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const services = [
-    "Aluminium Windows",
-    "Aluminium Doors",
-    "Glass Doors",
-    "Curtain Wall",
-    "Glass Partitions",
-    "Shower Enclosures",
-  ];
-
-  const workingHours = [
-    { day: "Monday", time: "8 AM - 5 PM" },
-    { day: "Tuesday", time: "8 AM - 5 PM" },
-    { day: "Wednesday", time: "8 AM - 5 PM" },
-    { day: "Thursday", time: "8 AM - 5 PM" },
-    { day: "Friday", time: "8 AM - 5 PM" },
-    { day: "Saturday", time: "8 AM - 5 PM" },
-    { day: "Sunday", time: "Closed" },
-  ];
-
   return (
-    <footer className="bg-neutral-100 p-3 text-slate-300">
-      <div className="flex justify-center">
-        <div className="relative w-full max-w-[min(99vw,1800px)] overflow-hidden rounded-xl bg-gradient-to-b from-neutral-800 to-neutral-950 shadow-[0_8px_30px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] ring-1 ring-black/5">
+    <footer className="bg-[#101214] text-neutral-300 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+          
+          {/* Brand & Monogram - spans 4 columns on Desktop */}
+          <div className="space-y-4 lg:col-span-4">
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img
+                src="/images/logo.jpg"
+                alt="AM Glass Aluminium Logo"
+                className="h-12 w-12 rounded-full object-cover border border-[#b8893e]/40"
+              />
+              <div>
+                <span className="block font-display text-lg font-bold text-white tracking-wide">
+                  AM Glass Aluminium
+                </span>
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-[#d9b66e]">
+                  Architectural Glazing Dubai
+                </span>
+              </div>
+            </Link>
 
-          {/* Main Footer */}
-          <div className="relative z-10 flex min-h-[25rem] flex-col">
+            <p className="text-sm leading-relaxed !text-white max-w-sm">
+  Specialized engineering and precision fabrication of architectural aluminium and glass systems for luxury villas, commercial towers, and institutional projects across Dubai and the UAE.
+</p>
 
-            {/* Footer Content */}
-            <div className="flex-1 border-b border-white/10 px-5 pb-10 pt-10 sm:px-8 sm:pt-12 lg:px-12 lg:pt-14 xl:px-16">
+            {/* Approved Direct Links: WhatsApp, Call, Email */}
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href="https://wa.me/971549982498"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp AM Glass Aluminium"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-200 hover:bg-[#b8893e] hover:text-[#101214]"
+              >
+                <MessageSquare className="h-4 w-4" />
+              </a>
 
-              <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-8">
+              <a
+                href="tel:+971549982498"
+                aria-label="Call AM Glass Aluminium"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-200 hover:bg-[#b8893e] hover:text-[#101214]"
+              >
+                <Phone className="h-4 w-4" />
+              </a>
 
-                {/* Company - spans 4 columns */}
-                <div className="space-y-4 sm:col-span-2 lg:col-span-4">
-                  <Link to="/" className="inline-flex items-center gap-2">
-                    <img
-                      src="/images/logo.jpg"
-                      alt="Aluminium & Glass Logo"
-                      className="h-10 w-auto object-contain"
-                    />
-                  </Link>
+              <a
+                href="mailto:info@amglassaluminum.com"
+                aria-label="Email AM Glass Aluminium"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-200 hover:bg-[#b8893e] hover:text-[#101214]"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
 
-                  {/* FORCED WHITE DESCRIPTION */}
-                  <p 
-                    className="max-w-sm text-sm leading-relaxed !text-white"
-                    style={{ color: '#ffffff' }}
-                  >
-                    At Abdullah Mir Glass & Aluminium, we're dedicated to transforming
-                    spaces with the beauty and functionality of glass and aluminium.
-                    Our team brings expertise and care to every project, creating
-                    customised solutions that reflect your vision.
-                  </p>
+              <a
+                href="https://amglassaluminium.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Website"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-200 hover:bg-[#b8893e] hover:text-[#101214]"
+              >
+                <Globe className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
 
-                  {/* Social Links */}
-                  <div className="flex items-center gap-4 pt-1">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Facebook"
-                      className="text-slate-300 transition-colors duration-200 hover:text-white"
-                    >
-                      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                      </svg>
-                    </a>
-
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Instagram"
-                      className="text-slate-300 transition-colors duration-200 hover:text-white"
-                    >
-                      <svg
-                        className="h-5 w-5 fill-none stroke-current"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                    </a>
-
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="LinkedIn"
-                      className="text-slate-300 transition-colors duration-200 hover:text-white"
-                    >
-                      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="WhatsApp"
-                      className="text-slate-300 transition-colors duration-200 hover:text-white"
-                    >
-                      <Phone className="h-5 w-5" strokeWidth={1.8} />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Quick Links */}
-                <div className="space-y-4 lg:col-span-2">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-                    Quick Links
-                  </h3>
-
-                  <ul className="space-y-2.5">
-                    {quickLinks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          to={link.path}
-                          className="group relative inline-block text-sm text-slate-300 transition-colors duration-200 hover:text-white"
-                        >
-                          {link.name}
-                          <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Services */}
-                <div className="space-y-4 lg:col-span-2">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-                    Services
-                  </h3>
-
-                  <ul className="space-y-2.5">
-                    {services.map((service) => (
-                      <li key={service}>
-                        <Link
-                          to="/services"
-                          className="group relative inline-block text-sm leading-snug text-slate-300 transition-colors duration-200 hover:text-white"
-                        >
-                          {service}
-                          <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Working Hours */}
-                <div className="space-y-4 lg:col-span-2">
-                  <h3 className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white">
-                    <Clock className="h-3.5 w-3.5" />
-                    Working Hours
-                  </h3>
-
-                  <ul className="space-y-2">
-                    {workingHours.map((item) => (
-                      <li
-                        key={item.day}
-                        className="flex items-center justify-between gap-3 text-xs leading-snug sm:text-sm"
-                      >
-                        <span className="text-slate-300">{item.day}</span>
-                        <span
-                          className={
-                            item.time === "Closed"
-                              ? "font-semibold text-red-400"
-                              : "text-slate-400"
-                          }
-                        >
-                          {item.time}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Contact */}
-                <div className="space-y-4 sm:col-span-2 lg:col-span-2">
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-                      Contact Us
-                    </h3>
-                    <p className="mt-1 text-[10px] font-medium uppercase tracking-[2px] text-slate-500">
-                      Aluminium & Glass
-                    </p>
-                  </div>
-
-                  <div className="space-y-3.5">
-                    {/* Address */}
-                    <div className="flex items-start gap-2.5">
-                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-300" />
-                      <span className="text-xs leading-snug text-slate-300">
-                        SHON BUSINESS PARK, ZONE 02 BUILDING, DUBAI INVESTMENT PARK (DIP) UAE DUBAI
-                      </span>
-                    </div>
-
-                    {/* Phone */}
-                    <div className="flex items-center gap-2.5">
-                      <Phone className="h-4 w-4 shrink-0 text-slate-300" />
-                      <a
-                        href="tel:+971526427235"
-                        className="text-xs text-slate-300 transition-colors hover:text-white"
-                      >
-                        +971526427235
-                      </a>
-                    </div>
-
-                    {/* Email */}
-                    <div className="flex items-start gap-2.5">
-                      <Mail className="mt-0.5 h-4 w-4 shrink-0 text-slate-300" />
-                      <a
-                        href="mailto:amaluminumglassdubai@gmail.com"
-                        className="break-all text-xs text-slate-300 transition-colors hover:text-white"
-                      >
-                        amaluminumglassdubai@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Quote Button */}
+          {/* Quick Links - spans 2 columns */}
+          <div className="space-y-4 lg:col-span-2">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9b66e]">
+              Navigation
+            </h3>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
                   <Link
-                    to="/contact"
-                    className="mt-1 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-black shadow-sm transition-all duration-200 hover:bg-neutral-200 hover:shadow-md"
+                    to={link.path}
+                    className="text-sm text-neutral-400 hover:text-white transition-colors"
                   >
-                    Get Quote
-                    <ArrowUpRight className="h-4 w-4" />
+                    {link.name}
                   </Link>
-                </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
+          {/* All 10 Official Services - spans 3 columns */}
+          <div className="space-y-4 lg:col-span-3">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9b66e]">
+              Official Services
+            </h3>
+            <ul className="space-y-2 grid grid-cols-1 gap-1">
+              {services.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    to="/services"
+                    className="text-xs text-neutral-400 hover:text-white transition-colors block truncate"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Information - spans 3 columns */}
+          <div className="space-y-4 lg:col-span-3">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9b66e]">
+              Dubai Head Office
+            </h3>
+
+            <div className="space-y-3 text-xs text-neutral-400">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="h-4 w-4 text-[#d9b66e] shrink-0 mt-0.5" />
+                <span>
+                  SHON BUSINESS PARK, ZONE 02 BUILDING, DUBAI INVESTMENT PARK (DIP), DUBAI, UAE
+                </span>
+              </div>
+
+              <div className="pt-2 border-t border-white/10 space-y-1.5">
+                <p className="text-[10px] font-bold uppercase tracking-wider !text-white">
+  Approved Phone Lines
+</p>
+                <a href="tel:+971526427235" className="block text-neutral-300 hover:text-[#d9b66e] transition-colors">
+                  +971 52 642 7235
+                </a>
+                <a href="tel:+971549982498" className="block text-neutral-300 hover:text-[#d9b66e] transition-colors">
+                  +971 54 998 2498
+                </a>
+                <a href="tel:+97142661822" className="block text-neutral-300 hover:text-[#d9b66e] transition-colors">
+                  +971 4 266 1822
+                </a>
+              </div>
+
+              <div className="pt-2 border-t border-white/10 space-y-1">
+               <p className="text-[10px] font-bold uppercase tracking-wider !text-white">
+  Direct Emails
+</p>
+                <a href="mailto:info@amglassaluminum.com" className="block text-neutral-300 hover:text-[#d9b66e] transition-colors break-all">
+                  info@amglassaluminum.com
+                </a>
+                <a href="mailto:amaluminumglassdubai@gmail.com" className="block text-neutral-300 hover:text-[#d9b66e] transition-colors break-all">
+                  amaluminumglassdubai@gmail.com
+                </a>
               </div>
             </div>
 
-            {/* Bottom Footer */}
-            <div className="border-t border-white/10 px-5 py-6 sm:px-8 sm:py-7 lg:px-12 lg:py-8 xl:px-16">
-              <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:gap-3">
-                <p className="order-2 text-center text-xs text-slate-300 md:order-1 md:text-left">
-                  © {new Date().getFullYear()} Aluminium & Glass. All rights reserved.
-                </p>
-
-                <p className="order-1 text-center text-xs text-white/50 md:order-2 md:text-sm">
-                  "Quality, precision, and design that lasts."
-                </p>
-
-                <div className="order-3 flex flex-wrap items-center justify-center gap-4 md:justify-end">
-                  <Link
-                    to="/contact"
-                    className="text-xs text-slate-300 transition-colors duration-200 hover:text-white sm:text-sm"
-                  >
-                    Privacy
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="text-xs text-slate-300 transition-colors duration-200 hover:text-white sm:text-sm"
-                  >
-                    Terms
-                  </Link>
-                </div>
-              </div>
+            <div className="pt-2">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#a87830] via-[#d9b66e] to-[#b8893e] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#101214] shadow-md transition-transform hover:scale-105"
+              >
+                <span>Request Quotation</span>
+                <ArrowUpRight className="h-3.5 w-3.5 stroke-[2.5]" />
+              </Link>
             </div>
+          </div>
 
+        </div>
+
+        {/* Legal & Commercial Registration Footer Strip */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+          <div className="text-center md:text-left space-y-1">
+            <p className="!text-white">
+  © {new Date().getFullYear()} AM Glass Aluminium. All rights reserved.
+</p>
+            {/* <p className="text-[11px] text-neutral-500">
+              Legal Commercial Registration: <span className="text-neutral-400">Abdullah Mir Glass &amp; Aluminum Installation &amp; Maintenance L.L.C</span>
+            </p> */}
+          </div>
+
+          <div className="flex items-center gap-6 text-[11px]">
+            <Link to="/contact" className="hover:text-[#d9b66e] transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/contact" className="hover:text-[#d9b66e] transition-colors">
+              Terms of Service
+            </Link>
+            <a href="https://amglassaluminium.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#d9b66e] transition-colors">
+              amglassaluminium.com
+            </a>
           </div>
         </div>
+
       </div>
     </footer>
   );

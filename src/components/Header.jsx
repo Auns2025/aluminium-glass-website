@@ -22,15 +22,15 @@ const Header = () => {
 
           <Link
             to="/"
-            aria-label="Aluminium & Glass Home"
+            aria-label="AM Glass Aluminium Home"
             className="group relative z-10 flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#d8c8a6] bg-white transition-transform hover:scale-105"
           >
-            <img src="/images/logo.jpg" alt="Aluminium & Glass Logo" className="h-full w-full object-cover" />
+            <img src="/images/logo.jpg" alt="AM Glass Aluminium Logo" className="h-full w-full object-cover" />
           </Link>
 
           <div className="relative z-10 flex h-11 min-w-0 flex-1 items-center justify-center md:hidden">
             <Link to="/" className="truncate px-1 text-center text-[10px] font-bold tracking-[0.18em] text-[#101214] sm:text-xs">
-              ALUMINIUM &amp; GLASS
+              AM GLASS ALUMINIUM
             </Link>
           </div>
 
